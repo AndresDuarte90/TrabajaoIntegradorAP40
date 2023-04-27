@@ -122,15 +122,23 @@ public class Main {
     private static void darDeAltaProducto(Scanner scanner) {
         System.out.println("Ingrese el nombre del producto:");
         String nombre = scanner.next();
+        
+        System.out.println("Ingrese la descripcion del producto:");
+        String descripcion = scanner.next();
+        
+        System.out.println("Ingrese la Fecha de Vencimiento del producto:");
+        String fechaVenc = scanner.next();
 
         System.out.println("Ingrese el precio del producto:");
         double precio = scanner.nextDouble();
 
         try {
-            String query = "INSERT INTO producto (productoNombre, productoPrecio) VALUES (?, ?)";
+            String query = "INSERT INTO producto (productoNombre, productoDescripcion, productoFechaVenc, productoPrecio) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, nombre);
-            statement.setDouble(2, precio);
+            statement.setString(2, descripcion);
+            statement.setString(3, fechaVenc);
+            statement.setDouble(4, precio);
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Producto dado de alta con exito.");
