@@ -22,15 +22,29 @@ public class Main {
             System.out.println("Conexion establecida con exito.\n");
 
             Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("-------------------------------------------");
+            System.out.println("-----------       Bienvenido      ---------");
+            System.out.println("-----------           a           ---------");
+            System.out.println("----------- tu Sistema de Gestion ---------");
+            System.out.println("-------------------------------------------\n\n");
 
             while (true) {
-                System.out.println("Que accion desea realizar?");
-                System.out.println("1. Dar de alta cliente");
-                System.out.println("2. Dar de baja cliente");
-                System.out.println("3. Dar de alta producto");
-                System.out.println("4. Dar de baja producto");
-                System.out.println("5. Realizar compra");
-                System.out.println("6. Salir");
+            	System.out.println("------------------------------");
+            	System.out.println("| Que accion deseas realizar? |");
+                System.out.println("------------------------------");
+                System.out.println("| 1. Dar de alta cliente      |");
+                System.out.println("------------------------------");
+                System.out.println("| 2. Dar de baja cliente      |");
+                System.out.println("------------------------------");
+                System.out.println("| 3. Dar de alta producto     |");
+                System.out.println("------------------------------");
+                System.out.println("| 4. Dar de baja producto     |");
+                System.out.println("------------------------------");
+                System.out.println("| 5. Realizar compra          |");
+                System.out.println("------------------------------");
+                System.out.println("| 6. Salir                    |");
+                System.out.println("------------------------------");
 
                 int opcion = scanner.nextInt();
 
@@ -67,18 +81,23 @@ public class Main {
 
     private static void darDeAltaCliente(Scanner scanner) {
     	System.out.println("Ingrese el DNI del cliente:");
+    	System.out.println("****************************");
         int DNI = scanner.nextInt();
     	
     	System.out.println("Ingrese el nombre del cliente:");
+    	System.out.println("*******************************");
         String nombre = scanner.next();
 
         System.out.println("Ingrese el apellido del cliente:");
+        System.out.println("*********************************");
         String apellido = scanner.next();
 
         System.out.println("Ingrese el domicilio del cliente:");
+        System.out.println("**********************************");
         String domicilio = scanner.next();
 
         System.out.println("Ingrese el telefono del cliente:");
+        System.out.println("*********************************");
         int telefono = scanner.nextInt();
 
         try {
@@ -102,6 +121,7 @@ public class Main {
 
     private static void darDeBajaCliente(Scanner scanner) {
         System.out.println("Ingrese el DNI del cliente a dar de baja:");
+        System.out.println("******************************************");
         int clienteDNI = scanner.nextInt();
 
         try {
@@ -121,15 +141,19 @@ public class Main {
     
     private static void darDeAltaProducto(Scanner scanner) {
         System.out.println("Ingrese el nombre del producto:");
+        System.out.println("********************************");
         String nombre = scanner.next();
         
         System.out.println("Ingrese la descripcion del producto:");
+        System.out.println("*************************************");
         String descripcion = scanner.next();
         
         System.out.println("Ingrese la Fecha de Vencimiento del producto:");
+        System.out.println("**********************************************");
         String fechaVenc = scanner.next();
 
         System.out.println("Ingrese el precio del producto:");
+        System.out.println("********************************");
         double precio = scanner.nextDouble();
 
         try {
@@ -152,6 +176,7 @@ public class Main {
 
     private static void darDeBajaProducto(Scanner scanner) {
         System.out.println("Ingrese el ID del producto a dar de baja:");
+        System.out.println("******************************************");
         int productoID = scanner.nextInt();
 
         try {
@@ -171,6 +196,7 @@ public class Main {
     
     private static void realizarCompra(Scanner scanner) {
         System.out.println("Ingrese el DNI del cliente que realiza la compra:");
+        System.out.println("**************************************************");
         int clienteDNI = scanner.nextInt();
         
         
@@ -193,6 +219,7 @@ public class Main {
         }
         
         System.out.println("Ingrese el ID del producto a comprar (-1 para finalizar):");
+        System.out.println("**********************************************************");
         int productoID = scanner.nextInt();
         double total = 0;
 
@@ -243,6 +270,7 @@ public class Main {
 
             
             System.out.println("Ingrese el ID del producto a comprar (-1 para finalizar):");
+            System.out.println("**********************************************************");
             productoID = scanner.nextInt();
         }
 
